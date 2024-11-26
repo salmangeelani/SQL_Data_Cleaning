@@ -88,7 +88,12 @@ FROM Company_Year_Rank
 WHERE Ranking <=5 ;
 
 
+SELECT stage, ROUND(AVG(percentage_laid_off),2)
+FROM layoffs_staging2
+GROUP BY stage
+ORDER BY 2 DESC;
 
+-- The last query gives an insight about the fact that a large company with a laid off percentage of 0.05 will show more employees being laid off than a small company where laid off percentage is as large as 0.7.
 
 
 
